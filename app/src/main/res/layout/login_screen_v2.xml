@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="#EFEFEF"
     android:orientation="vertical"
-    tools:context="com.hq.loginscreenpolarbear.LoginScreen01">
+    tools:context="com.hq.loginscreenpolarbear.LoginScreenV2">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"

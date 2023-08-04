@@ -1,7 +1,5 @@
 package com.hq.loginscreenpolarbear;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.os.Handler;
 import android.text.Editable;
@@ -10,16 +8,18 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import app.rive.runtime.kotlin.RiveAnimationView;
 import app.rive.runtime.kotlin.core.Rive;
 
 /**
- * @author HaiderQadir
+ * @author Haider Qadir
  **/
 public class LoginScreen extends AppCompatActivity {
     RiveAnimationView riveAnimationView;
-    Button login;
     EditText email, password;
+    Button login;
     private String stateMachineName = "Login Machine";
 
     @Override
@@ -34,10 +34,8 @@ public class LoginScreen extends AppCompatActivity {
             public void onFocusChange(View view, boolean b) {
                 if (b) {
                     riveAnimationView.setBooleanState(stateMachineName, "isChecking", true);
-
                 } else {
                     riveAnimationView.setBooleanState(stateMachineName, "isChecking", false);
-
                 }
             }
         });
@@ -58,7 +56,6 @@ public class LoginScreen extends AppCompatActivity {
                             "numLook",
                             editable.length()
                     );
-
                 } catch (Exception exception) {
                 }
             }
@@ -91,7 +88,6 @@ public class LoginScreen extends AppCompatActivity {
                             riveAnimationView.getController().fireState(stateMachineName, "trigSuccess");
                         } else {
                             riveAnimationView.getController().fireState(stateMachineName, "trigFail");
-
                         }
                     }
                 };
@@ -107,4 +103,5 @@ public class LoginScreen extends AppCompatActivity {
         password = findViewById(R.id.password);
         login = findViewById(R.id.button);
     }
+
 }

@@ -1,19 +1,19 @@
 package com.hq.loginscreenpolarbear;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.bumptech.glide.Glide;
 import com.google.android.material.textfield.TextInputEditText;
 
 /**
- * @author HaiderQadir
+ * @author Haider Qadir
  **/
-public class LoginScreen01 extends AppCompatActivity {
+public class LoginScreenV2 extends AppCompatActivity {
     ImageView imageView;
     TextInputEditText email;
     TextInputEditText password;
@@ -22,7 +22,7 @@ public class LoginScreen01 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.login_screen_01);
+        setContentView(R.layout.login_screen_v2);
 
         imageView = findViewById(R.id.imageView);
         email = findViewById(R.id.email);
@@ -30,8 +30,7 @@ public class LoginScreen01 extends AppCompatActivity {
         login = findViewById(R.id.loginButton);
 
         Integer url = R.drawable.email;
-        Glide.with(this).load(url)
-                .into(imageView);
+        Glide.with(this).load(url).into(imageView);
 
         email.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
@@ -46,8 +45,7 @@ public class LoginScreen01 extends AppCompatActivity {
             @Override
             public void onFocusChange(View view, boolean b) {
                 Integer url = R.drawable.password;
-                Glide.with(getApplicationContext()).load(url)
-                        .into(imageView);
+                Glide.with(getApplicationContext()).load(url).into(imageView);
             }
         });
 
@@ -60,14 +58,13 @@ public class LoginScreen01 extends AppCompatActivity {
 
                 if (email.getText().toString().equals("admin@admin.com") && password.getText().toString().equals("admin")) {
                     Integer url = R.drawable.email;
-                    Glide.with(getApplicationContext()).load(url)
-                            .into(imageView);
+                    Glide.with(getApplicationContext()).load(url).into(imageView);
                 } else {
                     Integer url = R.drawable.login;
-                    Glide.with(getApplicationContext()).load(url)
-                            .into(imageView);
+                    Glide.with(getApplicationContext()).load(url).into(imageView);
                 }
             }
         });
     }
+
 }
